@@ -1,0 +1,20 @@
+@import "~bootstrap/scss/bootstrap";
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+body{
+  padding: 50px 0;
+  font-family: 'Abel', sans-serif;
+}
+.note {
+  margin: 8px 0;
+  padding: 8px;
+  background-color: rgba(95, 255, 194, 0.5);  
+  cursor: pointer;
+}
+
+#notes{
+  margin: 0
+}
