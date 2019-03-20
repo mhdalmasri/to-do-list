@@ -13,8 +13,8 @@ export const renderNotes = notes => {
   domElements.noteContainer.innerHTML = notes
     .map((note, index) => {
       return `
-        <div class="note col-12 pointer border rounded" id="${index}">
-        ${note}
+        <div class="note col-12  border rounded d-flex justify-content-between">
+        ${note.name}<i class="far fa-trash-alt pointer" id="${index}"></i>
         </div>
       `
     })
@@ -24,7 +24,7 @@ export const renderNotes = notes => {
 }
 const targetNote = () => {
   //check if we have a note and eventually attach an eventlistner
-  const noteDive = document.querySelectorAll(".note");
+  const noteDive = document.querySelectorAll(".far");
   if (noteDive !== null)
     noteDive.forEach(oneDiv => {
       oneDiv.addEventListener("click", () => {

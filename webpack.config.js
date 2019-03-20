@@ -49,30 +49,26 @@ module.exports = {
       //image file loader
       {
         test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "assets/img/",
-              publicPath: "../img/"
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "assets/img/",
+            publicPath: "../img/"
           }
-        ]
+        }]
       },
       //fonts
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "assets/fonts/",
-              publicPath: "../fonts"
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "assets/fonts/",
+            publicPath: "../fonts"
           }
-        ]
+        }]
       }
     ]
   },
@@ -89,7 +85,7 @@ module.exports = {
       filename: "assets/css/styles.css"
     }),
     new HtmlWebpackPlugin({
-      title: "Architecture with Eventlisteners",
+      title: "Note App",
       template: "src/index.html",
       inject: true,
       minify: {
@@ -100,7 +96,9 @@ module.exports = {
     new BrowserSyncPlugin({
       host: "localhost",
       port: 3000,
-      server: { baseDir: ["dist"] }
+      server: {
+        baseDir: ["dist"]
+      }
     })
   ],
   performance: {

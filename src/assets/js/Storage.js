@@ -16,7 +16,8 @@ export default class Storage extends MyNiceEvents {
   }
 
   addDataSet(dataParameter) {
-    this.data.push(dataParameter)
+    let obj={name:dataParameter,status:"pending"}
+    this.data.push(obj)
     this.emit("updated", this.data)
     this.save()
   }
@@ -53,7 +54,7 @@ export default class Storage extends MyNiceEvents {
   }
 }
 
-export const noteStorage = new Storage("myAwesomeNote")
+export const noteStorage = new Storage("myNote")
 
 noteStorage.on("addItem", note => {
   noteStorage.addDataSet(note)
